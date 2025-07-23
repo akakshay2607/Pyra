@@ -29,7 +29,7 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            # form.save()
             resp = send_telegram_message(json.dumps(form.cleaned_data))
             return JsonResponse({'message': 'Thanks! We will get back to you shortly.'})
         else:
