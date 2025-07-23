@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dmin0099crhc)oqj78r75+9r*v*#80h*guxk=$r8d9q1fp35s*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pyra.onrender.com']
 
 
 # Application definition
