@@ -2,8 +2,10 @@ services:
   - type: web
     name: Pyra
     env: python
+    allowedHosts: [pyra.onrender.com]
     buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
     startCommand: gunicorn Pyra.wsgi
     envVars:
       - key: DEBUG
         value: false
+  
