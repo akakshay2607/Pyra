@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'main/navbar.css' %}">
+    {% block styles %}{% endblock styles %}
+  </head>
+  <body>
+    {% include "main/includes/navbar.html" %}
+    {% comment %} <h1>Hello, world!</h1> {% endcomment %}
+    {% block content %}{% endblock content %}
+    <script src="{% static 'main/js/nav.js' %}" defer></script>
+  </body>
+</html>

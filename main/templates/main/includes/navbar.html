@@ -1,0 +1,21 @@
+<header class="pyra-nav">
+  <div class="nav-container">
+    <a class="logo" href="/">Pyra</a>
+
+    <!-- hamburger MUST have id="navToggle" -->
+    <button class="hamburger" id="navToggle" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- nav MUST have id="navLinks" -->
+    <nav class="nav-links" id="navLinks">
+      <ul>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'about' %}">About&nbsp;Us</a></li>
+        <li><a href="{% url 'contact' %}">Contact&nbsp;Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

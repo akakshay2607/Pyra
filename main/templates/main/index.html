@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Pyra – Custom Software Solutions{% endblock title %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'main/home.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+{% endblock styles %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>We build software that <span>fits&nbsp;perfectly</span>.</h1>
+    <p>From MVP to enterprise, Pyra delivers custom web apps, desktop tools & automation that grow with your business.</p>
+    <a href="{% url 'contact' %}" class="btn-primary">Start a project</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <h2 class="section-title">What we do</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Custom Web Apps</h3>
+      <p>Scalable Django solutions built for your exact workflow.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-desktop"></i>
+      <h3>Custom Desktop Software</h3>
+      <p>Tools (Tkinter / PyQt / PySide6) that run offline & online.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-robot"></i>
+      <h3>Automation & AI</h3>
+      <p>Scripts, bots & ML models that save hours every day.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-robot"></i>
+      <h3>Data Scraping & Data Mining</h3>
+      <p>We deliver desktop apps that let you scrape, clean, and mine web or internal data offline or online, without writing code or owning servers.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-robot"></i>
+      <h3> Android Automation via ADB</h3>
+      <p>We ship lightweight apps that hide ADB behind a clean GUI.Plug the phone in (or connect wirelessly), press Start</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-robot"></i>
+      <h3>Custom Telegram Bots</h3>
+      <p>Telegram Bots (using telegramAPI) as per your needs!!</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LATEST PROJECT -->
+<section class="latest-project">
+  <div class="container">
+    <div class="lp-text">
+      <h2>Latest launch</h2>
+      <h3>InvoiceFlow</h3>
+      <p>Built for a local logistics company, InvoiceFlow cut billing time from 6 hours to 15 minutes with AI-driven OCR & auto-matching.</p>
+      <a href="#" class="link-arrow">See more work →</a>
+    </div>
+    <div class="lp-img">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=60" alt="InvoiceFlow dashboard">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to start?</h2>
+  <p>Tell us about your idea and get a free roadmap in 24 h.</p>
+  <a href="{% url 'contact' %}" class="btn-primary">Get in touch</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2023 Pyra. All rights reserved.</p>
+</footer>
+{% endblock content %}

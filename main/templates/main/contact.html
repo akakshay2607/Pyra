@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Contact – Pyra
+{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'main/contact.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="{% static 'main/js/contact.js' %}"></script>
+
+{% endblock styles %}
+
+{% block content %}
+<main class="contact-wrapper">
+  <section class="contact-hero">
+    <h1>Let’s build something great together</h1>
+    <p>Tell us about your project and we’ll get back to you in 24&nbsp;hours.</p>
+  </section>
+
+  <section class="contact-form-section">
+    <form id="contactForm"  method="POST" novalidate>
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" id="submitBtn"> 
+        <span class="text">Send Message</span>
+        <span class="spinner" style="display:none;"></span>
+      </button>
+      <p class="result" id="formResult"></p>
+    </form>
+
+    <aside class="contact-info">
+      <h3>Other ways to reach us</h3>
+      <ul>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:ask.pyra@gmai.com">ask.pyra@gmai.com</a></li>
+        <li><i class="fas fa-phone"></i> <a href="tel:+919011755578">+919011755578</a></li>
+        <li><i class="fas fa-map-marker-alt"></i>Maharashtra,India</li>
+      </ul>
+    </aside>
+  </section>
+</main>
+
+<footer class="simple-footer">
+  <p>&copy; 2023 Pyra Technologies LLC</p>
+</footer>
+{% endblock content %}

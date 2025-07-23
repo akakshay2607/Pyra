@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Services – Pyra{% endblock title %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'main/services.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+{% endblock styles %}
+{% block content %}
+
+<main class="services-wrapper">
+  <section class="services-hero">
+    <h1>Services</h1>
+    <p>Everything you need to go from idea to production—fast.</p>
+  </section>
+
+  <!-- Service Blocks -->
+  <section class="service-list">
+    <!-- 1 -->
+    <article class="service-block">
+      <div class="service-icon">
+        <i class="fas fa-laptop-code"></i>
+      </div>
+      <div class="service-content">
+        <h2>Custom Web Applications</h2>
+        <p>
+          Scalable Django apps built for your exact workflow.
+          We handle auth, payments, admin dashboards, and deployment pipelines.
+        </p>
+        <ul>
+          <li>B2B dashboards & portals</li>
+          <li>Marketplaces & booking engines</li>
+          <li>REST & GraphQL APIs</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="service-block">
+      <div class="service-icon">
+        <i class="fas fa-desktop"></i>
+      </div>
+      <div class="service-content">
+        <h2>Desktop Software</h2>
+        <p>
+          Cross-platform desktop apps (PySide6, PyQt, Tkinter) that work offline
+          and sync when online—perfect for internal tools or client installs.
+        </p>
+        <ul>
+          <li>Windows / macOS / Linux installers</li>
+          <li>Auto-updater & telemetry baked-in</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="service-block">
+      <div class="service-icon">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="service-content">
+        <h2>Automation & AI</h2>
+        <p>
+          Scrapers, bots, and ML pipelines that save hours every day and
+          turn raw data into actionable insights.
+        </p>
+        <ul>
+          <li>Web scraping & data ingestion</li>
+          <li>Invoice / receipt OCR</li>
+          <li>Predictive analytics</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="service-block">
+      <div class="service-icon">
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+      <div class="service-content">
+        <h2>MVP Kick-Start</h2>
+        <p>
+          Go from zero to a working prototype in 2–4 weeks.  
+          We define scope, design, build, and deploy so you can validate the market fast.
+        </p>
+        <ul>
+          <li>User-story mapping & wireframes</li>
+          <li>CI/CD & cloud setup from day 1</li>
+          <li>Post-launch scaling roadmap</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- CTA -->
+  <section class="services-cta">
+    <h2>Ready to get started?</h2>
+    <p>Pick the service that fits, or tell us your unique challenge.</p>
+    <a href="{% url 'contact' %}" class="btn-primary">Request a quote</a>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2023 Pyra Technologies LLC. All rights reserved.</p>
+</footer>
+<script src="https://kit.fontawesome.com/dfd6e1c9a9.js" crossorigin="anonymous"></script>
+{% endblock content %}
