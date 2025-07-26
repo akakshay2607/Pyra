@@ -30,6 +30,11 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             # form.save()
+            # print(form.cleaned_data)
+            # print(form.changed_data.name)
+            if form.cleaned_data['name'].lower() == 'robertdek':
+                print("not campaign email")
+                return JsonResponse({'message': 'Thanks! We will get back to you shortly.'})
             resp = send_telegram_message(json.dumps(form.cleaned_data))
             return JsonResponse({'message': 'Thanks! We will get back to you shortly.'})
         else:
