@@ -1,85 +1,206 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} Pyra – Custom Software Solutions{% endblock title %}
+{% block title %}Pyra – Custom Software Solutions{% endblock title %}
 {% block styles %}
-  <link rel="stylesheet" href="{% static 'main/home.css' %}">
+  <link rel="stylesheet" href="{% static 'main/index.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock styles %}
 {% block content %}
+<!-- Floating particles background -->
+<div class="particles-container" id="particles"></div>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg">
+    <div class="gradient-circle"></div>
+    <div class="gradient-circle"></div>
+    <div class="gradient-circle"></div>
+  </div>
   <div class="hero-content">
-    <h1>We build software that <span>fits&nbsp;perfectly</span>.</h1>
+    <h1>We build software that <span class="gradient-text">fits&nbsp;perfectly</span>.</h1>
     <p>From MVP to enterprise, Pyra delivers custom web apps, desktop tools & automation that grow with your business.</p>
-    <a href="{% url 'contact' %}" class="btn-primary">Start a project</a>
+    <a href="{% url 'contact' %}" class="btn-primary">
+      <span>Start a project</span>
+      <div class="btn-icon">
+        <i class="fas fa-rocket"></i>
+      </div>
+    </a>
+  </div>
+  <div class="hero-indicator">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section class="services">
-  <h2 class="section-title">What we do</h2>
+  <div class="section-header">
+    <h2 class="section-title">What we do</h2>
+    <div class="section-divider">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
   <div class="service-grid">
-    <div class="service-card">
-      <i class="fas fa-laptop-code"></i>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-icon">
+        <div class="icon-bg">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+      </div>
       <h3>Custom Web Apps</h3>
       <p>Scalable Django solutions built for your exact workflow.</p>
+      <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="service-card">
-      <i class="fas fa-desktop"></i>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-icon">
+        <div class="icon-bg">
+          <i class="fas fa-desktop"></i>
+        </div>
+      </div>
       <h3>Custom Desktop Software</h3>
       <p>Tools (Tkinter / PyQt / PySide6) that run offline & online.</p>
+      <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="service-card">
-      <i class="fas fa-robot"></i>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-icon">
+        <div class="icon-bg">
+          <i class="fas fa-robot"></i>
+        </div>
+      </div>
       <h3>Automation & AI</h3>
       <p>Scripts, bots & ML models that save hours every day.</p>
+      <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="service-card">
-      <i class="fas fa-robot"></i>
-      <h3>Data Scraping & Data Mining</h3>
-      <p>We deliver desktop apps that let you scrape, clean, and mine web or internal data offline or online, without writing code or owning servers.</p>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="service-icon">
+        <div class="icon-bg">
+          <i class="fas fa-database"></i>
+        </div>
+      </div>
+      <h3>Data Scraping & Mining</h3>
+      <p>Desktop apps that scrape, clean, and mine data without coding.</p>
+      <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
-
-    <div class="service-card">
-      <i class="fas fa-robot"></i>
-      <h3> Android Automation via ADB</h3>
-      <p>We ship lightweight apps that hide ADB behind a clean GUI.Plug the phone in (or connect wirelessly), press Start</p>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+      <div class="service-icon">
+        <div class="icon-bg">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+      </div>
+      <h3>Android Automation via ADB</h3>
+      <p>Lightweight apps that hide ADB behind a clean GUI.</p>
+      <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
-
-    <div class="service-card">
-      <i class="fas fa-robot"></i>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+      <div class="service-icon">
+        <div class="icon-bg">
+          <i class="fas fa-comments"></i>
+        </div>
+      </div>
       <h3>Custom Telegram Bots</h3>
-      <p>Telegram Bots (using telegramAPI) as per your needs!!</p>
+      <p>Telegram Bots (using telegramAPI) as per your needs!</p>
+      <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
-
   </div>
 </section>
 
 <!-- LATEST PROJECT -->
 <section class="latest-project">
+  <div class="project-bg">
+    <div class="project-shape"></div>
+    <div class="project-shape"></div>
+  </div>
   <div class="container">
-    <div class="lp-text">
+    <div class="lp-text" data-aos="fade-right">
       <h2>Latest launch</h2>
       <h3>InvoiceFlow</h3>
       <p>Built for a local logistics company, InvoiceFlow cut billing time from 6 hours to 15 minutes with AI-driven OCR & auto-matching.</p>
-      <a href="#" class="link-arrow">See more work →</a>
+      <a href="#" class="link-arrow">See more work <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="lp-img">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=60" alt="InvoiceFlow dashboard">
+    <div class="lp-img" data-aos="fade-left">
+      <div class="img-container">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=60" alt="InvoiceFlow dashboard">
+        <div class="img-overlay">
+          <div class="overlay-content">
+            <h4>InvoiceFlow</h4>
+            <p>AI-Powered Billing Solution</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Ready to start?</h2>
-  <p>Tell us about your idea and get a free roadmap in 24 h.</p>
-  <a href="{% url 'contact' %}" class="btn-primary">Get in touch</a>
+  <div class="cta-bg">
+    <div class="cta-shape"></div>
+    <div class="cta-shape"></div>
+    <div class="cta-shape"></div>
+  </div>
+  <div class="cta-content">
+    <h2>Ready to start?</h2>
+    <p>Tell us about your idea and get a free roadmap in 24 h.</p>
+    <a href="{% url 'contact' %}" class="btn-primary">
+      <span>Get in touch</span>
+      <div class="btn-icon">
+        <i class="fas fa-paper-plane"></i>
+      </div>
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>&copy; 2023 Pyra. All rights reserved.</p>
+  <div class="footer-content">
+    <p>&copy; 2023 Pyra. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
 </footer>
+
+<!-- AOS Animation Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+
+  // Create floating particles
+  document.addEventListener('DOMContentLoaded', function() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Random size between 3px and 8px
+      const size = Math.random() * 5 + 3;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      // Random position
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      
+      // Random animation duration
+      particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
+      
+      particlesContainer.appendChild(particle);
+    }
+  });
+</script>
 {% endblock content %}

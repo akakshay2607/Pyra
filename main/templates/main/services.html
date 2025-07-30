@@ -4,21 +4,39 @@
 {% block styles %}
   <link rel="stylesheet" href="{% static 'main/services.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock styles %}
 {% block content %}
+<!-- Floating particles background -->
+<div class="particles-container" id="particles"></div>
 
 <main class="services-wrapper">
+  <!-- Hero Section with Animated Background -->
   <section class="services-hero">
-    <h1>Services</h1>
-    <p>Everything you need to go from idea to production—fast.</p>
+    <div class="hero-bg">
+      <div class="gradient-circle"></div>
+      <div class="gradient-circle"></div>
+      <div class="gradient-circle"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Our <span class="gradient-text">Services</span></h1>
+      <p>Everything you need to go from idea to production—fast.</p>
+      <div class="hero-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </section>
 
-  <!-- Service Blocks -->
+  <!-- Service Blocks with Enhanced Animation -->
   <section class="service-list">
     <!-- 1 -->
-    <article class="service-block">
+    <article class="service-block" data-aos="fade-up" data-aos-delay="100">
       <div class="service-icon">
-        <i class="fas fa-laptop-code"></i>
+        <div class="icon-bg">
+          <i class="fas fa-laptop-code"></i>
+        </div>
       </div>
       <div class="service-content">
         <h2>Custom Web Applications</h2>
@@ -27,17 +45,20 @@
           We handle auth, payments, admin dashboards, and deployment pipelines.
         </p>
         <ul>
-          <li>B2B dashboards & portals</li>
-          <li>Marketplaces & booking engines</li>
-          <li>REST & GraphQL APIs</li>
+          <li><i class="fas fa-check-circle"></i> B2B dashboards & portals</li>
+          <li><i class="fas fa-check-circle"></i> Marketplaces & booking engines</li>
+          <li><i class="fas fa-check-circle"></i> REST & GraphQL APIs</li>
         </ul>
+        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
       </div>
     </article>
 
     <!-- 2 -->
-    <article class="service-block">
+    <article class="service-block" data-aos="fade-up" data-aos-delay="200">
       <div class="service-icon">
-        <i class="fas fa-desktop"></i>
+        <div class="icon-bg">
+          <i class="fas fa-desktop"></i>
+        </div>
       </div>
       <div class="service-content">
         <h2>Desktop Software</h2>
@@ -46,16 +67,19 @@
           and sync when online—perfect for internal tools or client installs.
         </p>
         <ul>
-          <li>Windows / macOS / Linux installers</li>
-          <li>Auto-updater & telemetry baked-in</li>
+          <li><i class="fas fa-check-circle"></i> Windows / macOS / Linux installers</li>
+          <li><i class="fas fa-check-circle"></i> Auto-updater & telemetry baked-in</li>
         </ul>
+        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
       </div>
     </article>
 
     <!-- 3 -->
-    <article class="service-block">
+    <article class="service-block" data-aos="fade-up" data-aos-delay="300">
       <div class="service-icon">
-        <i class="fas fa-robot"></i>
+        <div class="icon-bg">
+          <i class="fas fa-robot"></i>
+        </div>
       </div>
       <div class="service-content">
         <h2>Automation & AI</h2>
@@ -64,17 +88,20 @@
           turn raw data into actionable insights.
         </p>
         <ul>
-          <li>Web scraping & data ingestion</li>
-          <li>Invoice / receipt OCR</li>
-          <li>Predictive analytics</li>
+          <li><i class="fas fa-check-circle"></i> Web scraping & data ingestion</li>
+          <li><i class="fas fa-check-circle"></i> Invoice / receipt OCR</li>
+          <li><i class="fas fa-check-circle"></i> Predictive analytics</li>
         </ul>
+        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
       </div>
     </article>
 
     <!-- 4 -->
-    <article class="service-block">
+    <article class="service-block" data-aos="fade-up" data-aos-delay="400">
       <div class="service-icon">
-        <i class="fas fa-mobile-alt"></i>
+        <div class="icon-bg">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
       </div>
       <div class="service-content">
         <h2>MVP Kick-Start</h2>
@@ -83,23 +110,74 @@
           We define scope, design, build, and deploy so you can validate the market fast.
         </p>
         <ul>
-          <li>User-story mapping & wireframes</li>
-          <li>CI/CD & cloud setup from day 1</li>
-          <li>Post-launch scaling roadmap</li>
+          <li><i class="fas fa-check-circle"></i> User-story mapping & wireframes</li>
+          <li><i class="fas fa-check-circle"></i> CI/CD & cloud setup from day 1</li>
+          <li><i class="fas fa-check-circle"></i> Post-launch scaling roadmap</li>
         </ul>
+        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
       </div>
     </article>
   </section>
 
-  <!-- CTA -->
+  <!-- Enhanced CTA Section -->
   <section class="services-cta">
-    <h2>Ready to get started?</h2>
-    <p>Pick the service that fits, or tell us your unique challenge.</p>
-    <a href="{% url 'contact' %}" class="btn-primary">Request a quote</a>
+    <div class="cta-bg">
+      <div class="cta-shape"></div>
+      <div class="cta-shape"></div>
+      <div class="cta-shape"></div>
+    </div>
+    <div class="cta-content">
+      <h2>Ready to get started?</h2>
+      <p>Pick the service that fits, or tell us your unique challenge.</p>
+      <a href="{% url 'contact' %}" class="btn-primary">
+        <span>Request a quote</span>
+        <div class="btn-icon">
+          <i class="fas fa-paper-plane"></i>
+        </div>
+      </a>
+    </div>
   </section>
 </main>
+
 <footer>
   <p>&copy; 2023 Pyra Technologies LLC. All rights reserved.</p>
 </footer>
-<script src="https://kit.fontawesome.com/dfd6e1c9a9.js" crossorigin="anonymous"></script>
+
+<!-- AOS Animation Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+
+  // Create floating particles
+  document.addEventListener('DOMContentLoaded', function() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Random size between 3px and 8px
+      const size = Math.random() * 5 + 3;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      // Random position
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      
+      // Random animation duration
+      particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
+      
+      particlesContainer.appendChild(particle);
+    }
+  });
+</script>
 {% endblock content %}
