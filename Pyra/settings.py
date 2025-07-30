@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dmin0099crhc)oqj78r75+9r*v*#80h*guxk=$r8d9q1fp35s*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['pyra.onrender.com','127.0.0.1:8000','127.0.0.1','pyra.online']
 
