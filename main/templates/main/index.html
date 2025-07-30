@@ -9,7 +9,6 @@
 {% block content %}
 <!-- Floating particles background -->
 <div class="particles-container" id="particles"></div>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
@@ -203,4 +202,27 @@
     }
   });
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Pyra",
+  "url": "https://pyra.online",
+  "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'main/images/pyra.jpeg' %}",
+  "description": "Custom software solutions tailored to your business needs",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Near Z.P.School Junekhed",
+    "addressLocality": "Isla,pur",
+    "addressRegion": "Maharashtra",
+    "postalCode": "416313",
+    "addressCountry": "India"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+919011755578",
+    "contactType": "customer service"
+  }
+}
+</script>]
 {% endblock content %}

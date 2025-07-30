@@ -1,44 +1,63 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Pyra – Custom Software Solutions">
-    <meta property="og:url" content="https://pyra.online">
-    <meta property="og:image" content="https://pyra.online/static/main/images/pyra.jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Pyra provides custom software solutions tailored to your business needs. Expert development in web, desktop, and enterprise applications.">
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{% static 'main/images/pyra.jpeg' %}">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="{% static 'main/images/pyra.jpeg' %}">
-
-    <title>{% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'main/navbar.css' %}">
-    {% block styles %}{% endblock styles %}
-  </head>
-  <body>
-    {% include "main/includes/navbar.html" %}
-    {% comment %} <h1>Hello, world!</h1> {% endcomment %}
-    {% block content %}{% endblock content %}
-    <script src="{% static 'main/js/nav.js' %}" defer></script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Pyra",
-        "url": "https://pyra.online",
-        "logo": "{% static 'main/images/pyra.jpeg' %}"
-      }
-    </script>
-    
-  </body>
+    <head>
+        <!-- Basic Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pyra – Custom Software Solutions</title>
+        
+        <!-- Standard Meta Description -->
+        <meta name="description" content="Pyra provides custom software solutions tailored to your business needs. Expert development in web, mobile, and enterprise applications.">
+        
+        <!-- Open Graph Tags (for social media) -->
+        <meta property="og:title" content="Pyra – Custom Software Solutions">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pyra.online">
+        <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'main/images/pyra.jpeg' %}">
+        <meta property="og:description" content="Pyra provides custom software solutions tailored to your business needs.">
+        
+        <!-- Twitter Card Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Pyra – Custom Software Solutions">
+        <meta name="twitter:description" content="Pyra provides custom software solutions tailored to your business needs.">
+        <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'main/images/pyra.jpeg' %}">
+        <link rel="stylesheet" href="{% static 'main/navbar.css' %}">
+        <!-- Structured Data for Google -->
+        {% block styles %}{% endblock styles %}
+        {% block structured_data %}
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Pyra",
+                "url": "https://pyra.online",
+                "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'main/images/pyra.jpeg' %}",
+                "description": "Custom software solutions tailored to your business needs"
+            }
+            </script>
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Pyra",
+                "url": "https://pyra.online",
+                "publisher": {
+                "@type": "Organization",
+                "name": "Pyra",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ request.scheme }}://{{ request.get_host }}{% static 'main/images/pyra.jpeg' %}"
+                }
+                }
+            }
+            </script>
+        {% endblock %}
+    </head>
+    <body>
+        {% include "main/includes/navbar.html" %}
+        {% comment %} <h1>Hello, world!</h1> {% endcomment %}
+        <script src="{% static 'main/js/nav.js' %}" defer></script>
+        {% block content %}{% endblock %}
+    </body>
 </html>
